@@ -1,0 +1,13 @@
+  getverified-co-za:
+    image: ghcr.io/getverifiedhq/getverified-co-za:main
+    container_name: getverified-co-za
+    restart: unless-stopped
+    env_file:
+      - prod.env
+    environment:
+      - LETSENCRYPT_HOST=getverified.co.za
+      - HOST=getverified.co.za
+      - VIRTUAL_HOST=getverified.co.za
+      - VIRTUAL_PORT=80
+    networks:
+      - proxy_network
