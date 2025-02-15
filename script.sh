@@ -1,0 +1,1 @@
+curl -L https://raw.githubusercontent.com/getverifiedhq/getverified-co-za/refs/heads/main/docker-compose.yaml | docker compose -f - up -d

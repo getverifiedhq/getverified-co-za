@@ -1,3 +1,6 @@
+version: '3.8'
+
+services:
   getverified-co-za:
     image: ghcr.io/getverifiedhq/getverified-co-za:main
     container_name: getverified-co-za
