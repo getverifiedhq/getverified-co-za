@@ -7,13 +7,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { BsArrowRight } from "react-icons/bs";
 import * as Yup from "yup";
-import {
-  CALL_TO_ACTION,
-  HEADING,
-  NAME,
-  SOCIAL_PROOF,
-  SUBHEADING,
-} from "./constants";
+import { CALL_TO_ACTION, HEADING, NAME, SUBHEADING } from "./constants";
 
 function App() {
   const [state, setState] = useState(false);
@@ -24,8 +18,6 @@ function App() {
       name: "",
     },
     onSubmit: async () => {
-      // await props.onSubmit(values.emailAddress, values.name);
-
       setState(true);
 
       formik.resetForm();
@@ -47,25 +39,8 @@ function App() {
           lg={{ offset: 6, span: 6 }}
         >
           <h6 className="fw-light text-uppercase">{NAME}</h6>
-          <h1 className="display-5 fw-bold mb-4">{HEADING}</h1>
-          <h2 className="lead lh-base mb-4">{SUBHEADING}</h2>
-
-          {/* <div className="d-flex justify-content-center mb-1">
-            {new Array(4)
-              .fill("https://randomuser.me/api/portraits/med/women/72.jpg")
-              .map((x, index) => (
-                <img
-                  alt={`Image ${index + 1}`}
-                  className="rounded-circle"
-                  key={x}
-                  src={x}
-                  style={{ marginLeft: index === 0 ? "0px" : "-24px" }}
-                  width={48}
-                />
-              ))}
-          </div> */}
-
-          {/* <div className="fst-italic mb-5 text-white">{SOCIAL_PROOF}</div> */}
+          <h1 className="display-5 fw-bold mb-2">{HEADING}</h1>
+          <h2 className="lead lh-base mb-5">{SUBHEADING}</h2>
 
           <Form.Group className="mb-4">
             <Form.Control
@@ -100,7 +75,14 @@ function App() {
             />
           </Form.Group>
 
-          {state ? <Alert variant="primary">MESSAGE</Alert> : null}
+          {state ? (
+            <Alert variant="primary">
+              We&apos;ve received your request, and one of our experts will be
+              in touch soon to discuss how Get Verified can support your
+              business with secure digital identity verification, fraud
+              detection and KYC compliance in South Africa.
+            </Alert>
+          ) : null}
 
           <Button
             className="fw-semibold mb-4 w-100"
